@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.sanae-card {
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    
+    overflow: hidden;
+    background-color: #64656b7d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    /*position: relative;*/
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+}
+
+.sanae-card img {
+    width: 100%;
+    height: auto; 
+    transition: filter 0.25s ease;
+    border-radius: 10px;
+
+    /*Start with no blur*/
+    filter: none; 
+}
+
+.sanae-card img.blur {
+    /*Apply Blur when Blur is called*/
+    filter: blur(4px); 
+}
+
+.sanae-card h2 {
+    margin: 10px;
+    color: #c5cde1;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center; 
+}
+
+.sanae-card-content p {
+    font-size: 14px;
+    color: #b0b5e1;
+    margin: 0;
+    visibility: hidden; 
+    opacity: 0; 
+    height: 0;
+
+    transition: opacity 0.3s ease, height 0.3s ease, visibility 0.3s ease;
+}
+
+.sanae-card-content p.visible {
+    visibility: visible; 
+    opacity: 1; 
+    height: auto; 
+}
+
+.toggle-btn {
+    text-align: center;
+
+    /*THIS LINE OF CODE IS SO COOL*/
+    cursor: pointer;
+
+    color: #9dccff;
+    margin: 15px; 
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 16px;
+}
+
+/* Tthe starry background! */
+#starryBackground {
+    /*The canvas is the whole screen, and stays in the same position*/
+    position: fixed; 
+    /*The canvas begins in the top left*/
+    top: 0;
+    left: 0;
+    /*The canvas is in the background*/
+    z-index: -1; 
+    /*It takes the whole viewport*/
+    width: 100vw;
+    height: 100vh;
+}
